@@ -3,7 +3,7 @@
 // get the posted data 
 $name = $_POST['contact_Name']; 
 $email_address = $_POST['contact_Email']; 
-$message = $_POST['contact_Message'];
+$spacelove = $_POST['contact_Message'];
 //} 
 
 // make sure email address is not spam
@@ -13,7 +13,7 @@ $sanitizedEmail = filter_var($email_address, FILTER_SANITIZE_EMAIL);
  
 //$email_content .= "Email Address: $email_address\n"; 
 $email_content = "Hey Mike,\n\n";
-$email_content .= " $message\n\n";
+$email_content .= " $spacelove\n\n";
 $email_content .= "Thanks,\n\n$name\n";
      
 // send the email 
@@ -27,7 +27,7 @@ mail ("sheldonmike@gmail.com", "New Contact Form Message", $email_content, 'From
 $firstname = $_POST['contact_firstName'];
 $lastname = $_POST['contact_lastName'];
 $email = $_POST['contact_Email']; 
-$message = $_POST['contact_Message'];
+$spacelove = $_POST['contact_Message'];
 //} 
 
 // make sure email address is not spam
@@ -41,8 +41,8 @@ $sanitizedEmail = filter_var($email_address, FILTER_SANITIZE_EMAIL);
     $hs_context = array(
             'hutk' => $hubspotutk,
             'ipAddress' => $ip_addr,
-            'pageUrl' => 'http://casprstudio.com/',
-            'pageName' => 'Caspr Studio | Home'
+            'pageUrl' => 'http://space.mikesheldon.com/',
+            'pageName' => 'Andromeda Galaxy'
         );
     $hs_context_json = json_encode($hs_context);
     
@@ -50,11 +50,11 @@ $sanitizedEmail = filter_var($email_address, FILTER_SANITIZE_EMAIL);
     $str_post = "firstname=" . urlencode($firstname)
             . "&lastname=" . urlencode($lastname)
             . "&email=" . urlencode($email)
-            . "&message=" . urlencode($message)
+            . "&spacelove=" . urlencode($spacelove)
             . "&hs_context=" . urlencode($hs_context_json);  //Leave this one be :)
     
      //replace the values in this URL with your portal ID and your form GUID
-    $endpoint = 'https://forms.hubspot.com/uploads/form/v2/321750/5e04e3f2-6721-4653-bf30-3505e4d5c6cc';
+    $endpoint = 'https://forms.hubspot.com/uploads/form/v2/321749/f7535c70-cf31-4fe5-b6c0-26b92da7ad8f';
     
     $ch = @curl_init();
     @curl_setopt($ch, CURLOPT_POST, true);
