@@ -35,6 +35,14 @@ input {
 	height: 30px;
 	padding: 10px;
 	border-radius: 5px;
+	border: none;
+	background-color: lightgray;
+}
+
+input:focus {
+	transform: scale(1.5);
+	transition: all.2s ease;
+	outline: 0;
 }
 
 textarea {
@@ -43,6 +51,29 @@ textarea {
 	padding: 10px;
 	border-radius: 5px;
 	width: 233px;
+	border: none;
+	background-color: lightgray;
+}
+
+textarea:focus {
+	transform: scale(1.5);
+	transition: all.2s ease;
+	outline: 0;
+	margin-bottom: 30px;
+}
+
+button {
+	font-size: 1.6em;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: none;
+	background-color: lightgray;
+	color: gray;
+}
+
+button:hover {
+	ransform: scale(1.1);
+	transition: all.2s ease;
 }
 
 form div {
