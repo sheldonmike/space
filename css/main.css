@@ -30,10 +30,30 @@ nav li:last-child {
 	margin-right: 0;
 }
 
+input {
+	width: 233px;
+	height: 30px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	padding: 10px;
+	border-radius: 5px;
+	width: 233px;
+}
+
+form div {
+	margin: 20px 0;
+}
+
 .banner {
 	height: 100vh;
 	background: black url("../img/andromeda.jpg") no-repeat;
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 .banner h1 {

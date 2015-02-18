@@ -1,26 +1,3 @@
-<!-- <?php
-     
-// get the posted data 
-$name = $_POST['contact_Name']; 
-$email_address = $_POST['contact_Email']; 
-$spacelove = $_POST['contact_Message'];
-//} 
-
-// make sure email address is not spam
-$sanitizedEmail = filter_var($email_address, FILTER_SANITIZE_EMAIL);
-         
-// write the email content 
- 
-//$email_content .= "Email Address: $email_address\n"; 
-$email_content = "Hey Mike,\n\n";
-$email_content .= " $spacelove\n\n";
-$email_content .= "Thanks,\n\n$name\n";
-     
-// send the email 
-mail ("sheldonmike@gmail.com", "New Contact Form Message", $email_content, 'From: ' . $sanitizedEmail); 
-  
-?> --> 
-
  <?php
  
 // get the posted data 
