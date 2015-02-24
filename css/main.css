@@ -134,6 +134,10 @@ a:hover {
 	box-shadow: inset 0 0 20px 1px rgba(0,0,0,0.75);
 }
 
+.second-section {
+	
+}
+
 .form-section {
 	max-width: 300px;
 	margin: 0 auto;
@@ -152,6 +156,10 @@ a:hover {
 
 .form {
 	text-align: center;
+}
+
+.footer-section {
+	margin-left: 5%;
 }
 
 /* clearfix */
