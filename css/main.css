@@ -5,6 +5,7 @@
   
   * {
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
   }
   
   a {
@@ -104,12 +105,41 @@
     width: 50%;
     float: left;
     padding: 0 2%;
+    position: inherit;
+    z-index: 1;
   }
   
   .right-column {
     width: 50%;
     float: left;
     padding: 0 2%;
+    position: inherit;
+    z-index: 1;
+  }
+  
+  .tweet-header {
+    text-align: center;
+    font-size: 2.9em;
+    color: white;
+    padding-bottom: 1.2em;
+  }
+  
+  .space-tweets {
+    position: relative;
+  }
+  
+  .left-tweets {
+    width: 50%;
+    float: left;
+    padding: 0 2%;
+    text-align: center;
+  }
+  
+  .right-tweets {
+    width: 50%;
+    float: left;
+    padding: 0 2%;
+    text-align: center;
   }
   
   .semi-circle {
@@ -141,12 +171,42 @@
     	height: 100vh;
     	box-shadow: inset 0 0 20px 1px rgba(0,0,0,0.75);
     	padding-top: 1%;
-    	/*position: relative;*/
-    	background: rgba(0,0,0,.8) url("../img/semi-circle-large.png") center;
+    	position: relative;
+    	/*background: rgb(50,50,50) url("../img/semi-circle-large.png") center;*/
     	color: white;
+    	
+    	background: -webkit-radial-gradient(center bottom, yellow -60%, rgba(0,0,0,0) 60%);
+      background-color: rgba(0,0,0,.8);
+    }
+    
+    #flare {
+      background: -webkit-radial-gradient(center bottom, crimson -60%, rgba(0,0,0,0) 60%);
+      background-color: rgba(0,0,0,.8);
+      
+      /*background-color: rgb(50,50,50);*/
+      opacity:0.0;
+      position:absolute;
+      /*top:0;*/
+      width:100%;
+      height:100%;
+      z-index: 0;
+      margin-top: -1%;
     }
     
     .second-section {
+    	height: 100%;
+    	box-shadow: inset 0 0 20px 1px rgba(0,0,0,0.75);
+    	background-color: #55ACEE;
+    }
+    
+    .tweet-section {
+      height: 100%;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow: hidden;
+      padding-bottom: 2%;
+    }
+    
+    .third-section {
     	height: 100vh;
     	box-shadow: inset 0 0 20px 1px rgba(0,0,0,0.75);
     }
