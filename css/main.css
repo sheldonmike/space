@@ -49,6 +49,30 @@
   
   /* Navigation */
   
+    .back-arrow {
+      float: left;
+      margin: 1em 0 1em 3em;
+      width: 1.4em;
+      height: 1.4em;
+      border-left: 0.2em solid white;
+      border-bottom: 0.2em solid white;
+      transform: rotate(45deg);
+      transition: all .5s ease;
+    }
+    
+    .back-arrow:hover {
+      -webkit-transform: rotate(45deg) scale(1.2);
+  	  -moz-transform: rotate(45deg) scale(1.2);
+  	  -ms-transform: rotate(45deg) scale(1.2);
+  	  -o-transform: rotate(45deg) scale(1.2);
+  	  transform: rotate(45deg) scale(1.2);
+    }
+    
+    #back-arrow {
+      width: 1.3em;
+      height: 1.3em;
+    }
+  
     nav {
     	float: right;
     	margin-right: 5%;
@@ -196,12 +220,12 @@
     .second-section {
     	height: 100%;
     	box-shadow: inset 0 0 20px 1px rgba(0,0,0,0.75);
-    	background-color: #55ACEE;
+    	background-color: black;
     }
     
     .tweet-section {
       height: 100%;
-      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      /*background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);*/
       overflow: hidden;
       padding-bottom: 2%;
     }
