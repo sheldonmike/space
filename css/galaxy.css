@@ -521,20 +521,20 @@
 
 .planet-buttons {
   float: left;
-  width: 25%;
+  width: 20%;
   margin: 1em 0;
   text-align: center;
   font-size: 1.4em;
   padding: 0 3em;
 }
 
-.rings, .static-orbit, .active-orbit, .clear-info {
+.rings, .static-orbit, .active-orbit, .clear-info, .scale {
   background-color: rgba(0,0,0,.5);
   padding: .5em 0;
   border: 1px solid rgba(255,255,255,.5);
 }
 
-.rings:hover, .static-orbit:hover, .active-orbit:hover, .clear-info:hover {
+.rings:hover, .static-orbit:hover, .active-orbit:hover, .clear-info:hover, .scale:hover {
   background-color: rgba(255,255,255,.5);
   color: black;
 }
@@ -548,11 +548,34 @@
   height:100%;
 }
 
+.galaxy-staticOn {
+  -webkit-animation: staticOn 3s ease;
+  animation: staticOn 3s ease;
+  left: 0;
+}
+
+@-webkit-keyframes staticOn {
+  from {left: 50%;}
+  to {left: 0;}
+}
+
+.galaxy-staticOff {
+  -webkit-animation: staticOff 3s ease;
+  animation:staticOff 3s ease;
+}
+
+@-webkit-keyframes staticOff {
+  from {left: 0;}
+  to {left: 50%;}
+}
 
 ::-webkit-scrollbar {
   display: none;
 }
 
+.no-vertical {
+  overflow-y: hidden;
+}
 
 .sun:hover * {
   -webkit-animation-play-state: paused!important;

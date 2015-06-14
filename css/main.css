@@ -327,3 +327,38 @@
   	margin-left: 5%;
   }
 
+  .new-settings {
+    position: relative;
+    bottom: -24.2em;
+    right: 1em;
+    background-color: white;
+    border: 1px solid black;
+    padding: .5%;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 8em;
+    text-align: center;
+    float: right;
+  }
+  
+  .tars {
+    background: url("../img/tars.jpg");
+    position: fixed;
+    bottom: -1381px;
+    width: 695px;
+    height: 1381px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .animateTars {
+    -webkit-animation: Tars 85s linear 15s;
+    animation: Tars 85s linear 15s;
+  }
+  
+  @-webkit-keyframes Tars {
+    0% {bottom: -1381px;}
+    50% {bottom: -450px;}
+    100% {bottom: -1381px;}
+  }
