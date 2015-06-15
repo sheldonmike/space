@@ -95,9 +95,190 @@ var plutoSpeed = earthSpeed*247.667
 var noOrbit = false;
 
 // Stops the planets from orbiting and arranges them in a static line
-$(document).ready(function(){
+$(function(){
   $('.static-orbit').click(function(){
     noOrbit = true;
+    
+    // Mercury - move into place on static
+        var mercuryPosition = $('.mercury').position();
+        // alert("Top: " + mercuryPosition.top + " Left: " + mercuryPosition.left);
+        
+        $.keyframe.define([{
+        name: 'Mercury',
+        from: {
+          'left': mercuryPosition.left+'px',
+          'top': mercuryPosition.top+'px'
+        },
+        to: {
+          'left': mercuryDistance+(sun/2)+'%',
+          'top': '50%'
+        }
+        }]);
+        
+        $('.mercury').playKeyframe(
+        'Mercury 2s ease'
+        );
+    
+    // Venus - move into place on static
+        var venusPosition = $('.venus').position();
+        // alert("Top: " + venusPosition.top + " Left: " + venusPosition.left);
+        
+        $.keyframe.define([{
+        name: 'Venus',
+        from: {
+          'left': venusPosition.left+'px',
+          'top': venusPosition.top+'px'
+        },
+        to: {
+          'left': venusDistance+(sun/2)+'%',
+          'top': '50%'
+        }
+        }]);
+        
+        $('.venus').playKeyframe(
+        'Venus 2s ease'
+        );
+        
+    // Earth - move into place on static
+    
+        var earthPosition = $('.earth').position();
+        // alert("Top: " + earthPosition.top + " Left: " + earthPosition.left);
+        
+        $.keyframe.define([{
+        name: 'Earth',
+        from: {
+          'left': earthPosition.left+'px',
+          'top': earthPosition.top+'px'
+        },
+        to: {
+          'left': earthDistance+(sun/2)+'%',
+          'top': '50%'
+        }
+        }]);
+        
+        $('.earth').playKeyframe(
+        'Earth 2s ease'
+        );
+    // Mars - move into place on static
+        var marsPosition = $('.mars').position();
+        // alert("Top: " + marsPosition.top + " Left: " + marsPosition.left);
+        
+        $.keyframe.define([{
+        name: 'Mars',
+        from: {
+          'left': marsPosition.left+'px',
+          'top': marsPosition.top+'px'
+        },
+        to: {
+          'left': marsDistance+(sun/2)+'%',
+          'top': '50%'
+        }
+        }]);
+        
+        $('.mars').playKeyframe(
+        'Mars 2s ease'
+        );
+    
+    // Jupiter - move into place on static
+        var jupiterPosition = $('.jupiter').position();
+        // alert("Top: " + jupiterPosition.top + " Left: " + jupiterPosition.left);
+        
+        $.keyframe.define([{
+        name: 'Jupiter',
+        from: {
+          'left': jupiterPosition.left+'px',
+          'top': jupiterPosition.top+'px'
+        },
+        to: {
+          'left': jupiterDistance+(sun/2)+'%',
+          'top': '50%'
+        }
+        }]);
+        
+        $('.jupiter').playKeyframe(
+        'Jupiter 2s ease'
+        );
+        
+    // Saturn - move into place on static
+        var saturnPosition = $('.saturn').position();
+        // alert("Top: " + saturnPosition.top + " Left: " + saturnPosition.left);
+        
+        $.keyframe.define([{
+        name: 'Saturn',
+        from: {
+          'left': saturnPosition.left+'px',
+          'top': saturnPosition.top+'px'
+        },
+        to: {
+          'left': saturnDistance+(sun/2)+'%',
+          'top': '50%'
+        }
+        }]);
+        
+        $('.saturn').playKeyframe(
+        'Saturn 2s ease'
+        );
+        
+    // Uranus - move into place on static
+        var uranusPosition = $('.uranus').position();
+        // alert("Top: " + uranusPosition.top + " Left: " + uranusPosition.left);
+        
+        $.keyframe.define([{
+        name: 'Uranus',
+        from: {
+          'left': uranusPosition.left+'px',
+          'top': uranusPosition.top+'px'
+        },
+        to: {
+          'left': uranusDistance+(sun/2)+'%',
+          'top': '50%'
+        }
+        }]);
+        
+        $('.ranus').playKeyframe(
+        'Uranus 2s ease'
+        );
+        
+    // Neptune - move into place on static
+        var neptunePosition = $('.neptune').position();
+        // alert("Top: " + neptunePosition.top + " Left: " + neptunePosition.left);
+        
+        $.keyframe.define([{
+        name: 'Neptune',
+        from: {
+          'left': neptunePosition.left+'px',
+          'top': neptunePosition.top+'px'
+        },
+        to: {
+          'left': neptuneDistance+(sun/2)+'%',
+          'top': '50%'
+        }
+        }]);
+        
+        $('.neptune').playKeyframe(
+        'Neptune 2s ease'
+        );
+        
+    // Pluto - move into place on static
+        var plutoPosition = $('.pluto').position();
+        // alert("Top: " + plutoPosition.top + " Left: " + plutoPosition.left);
+        
+        $.keyframe.define([{
+        name: 'Pluto',
+        from: {
+          'left': plutoPosition.left+'px',
+          'top': plutoPosition.top+'px'
+        },
+        to: {
+          'left': plutoDistance+(sun/2)+'%',
+          'top': '50%'
+        }
+        }]);
+        
+        $('.pluto').playKeyframe(
+        'Pluto 2s ease'
+        );
+    
     $('body').addClass('no-vertical');
     // $('.galaxy').css('left','0');
     $('.galaxy').removeClass('galaxy-staticOff');
@@ -124,6 +305,7 @@ $(document).ready(function(){
     $('body').removeClass('no-vertical');
     $('.galaxy').removeClass('galaxy-staticOn');
     $('.galaxy').addClass('galaxy-staticOff');
+    $('.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto').css('animation', '');
     $('.mercury, .venus, .earth, .moon, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto').css('left','50%');
     $('.mercury, .venus, .earth, .moon, .mars, .jupiter, .saturn, .uranus, .neptune, .pluto').removeClass("no-orbit");
     $(".mercury-orbit, .venus-orbit, .earth-orbit, .mars-orbit, .jupiter-orbit, .saturn-orbit, .uranus-orbit, .neptune-orbit, .pluto-orbit").removeClass("orbit-rings");
