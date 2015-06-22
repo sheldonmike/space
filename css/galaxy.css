@@ -521,21 +521,27 @@
 
 .planet-buttons {
   float: left;
-  width: 20%;
+  width: 25%;
   margin: 1em 0;
   text-align: center;
   font-size: 1.4em;
   padding: 0 3em;
 }
 
-.rings, .static-orbit, .active-orbit, .clear-info, .scale {
+.rings, .static-orbit, .active-orbit, .clear-info, .scale, .scale-off {
   background-color: rgba(0,0,0,.5);
   padding: .5em 0;
   border: 1px solid rgba(255,255,255,.5);
 }
 
-.rings:hover, .static-orbit:hover, .active-orbit:hover, .clear-info:hover, .scale:hover {
+.rings:hover, .static-orbit:hover, .active-orbit:hover, .clear-info:hover, .scale:hover, .scale-off:hover {
   background-color: rgba(255,255,255,.5);
+  color: black;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgba(255,255,255,.8);
   color: black;
 }
 
@@ -654,4 +660,24 @@ footer {
 nav {
   position: relative;
   z-index: 9;
+}
+
+.button-type {
+  float: left;
+  width: 33%;
+  padding: 0.5em 0;
+}
+
+.toggle-button {
+  float: left;
+  width: 33%;
+  padding: 0 0.5em;
+}
+
+.parallax {
+  height: 100%;
+  background: black url("../img/andromeda.jpg") no-repeat;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

@@ -98,6 +98,8 @@ var noOrbit = false;
 $(function(){
   $('.static-orbit').click(function(){
     noOrbit = true;
+    $('.active-orbit').removeClass('active');
+    $('.static-orbit').addClass('active');
     
     // Mercury - move into place on static
         var mercuryPosition = $('.mercury').position();
@@ -302,6 +304,8 @@ $(function(){
 $(document).ready(function(){
   $('.active-orbit').click(function(){
     noOrbit = false;
+    $('.static-orbit').removeClass('active');
+    $('.active-orbit').addClass('active');
     $('body').removeClass('no-vertical');
     $('.galaxy').removeClass('galaxy-staticOn');
     $('.galaxy').addClass('galaxy-staticOff');
@@ -380,6 +384,9 @@ $(document).ready(function(){
 // Changes the scale of the planets
 $(function(){
   $('.scale').click(function(){
+    $('.scale-off').removeClass('active');
+    $('.scale').addClass('active');
+    
     var earth = 5
     var mercury = earth*0.4
     var venus = earth*0.96
@@ -488,5 +495,119 @@ $(function(){
       $('.tars').addClass('animateTars');
       audio.play();
     }
+  });
+});
+
+
+// Scale back to normal
+$(function(){
+  $('.scale-off').click(function(){
+    $('.scale').removeClass('active');
+    $('.scale-off').addClass('active');
+    
+    $('.sun, .mercury, .venus, .earth, .moon, .mars, .jupiter, .saturn, .saturn-rings, .uranus, .neptune, .pluto').css('width','');
+    $('.sun, .mercury, .venus, .earth, .moon, .mars, .jupiter, .saturn, .saturn-rings, .uranus, .neptune, .pluto').css('height','');
+    $('.saturn-rings').css('border','');
+    
+    $('.mercury, .venus, .earth, .moon, .mars, .jupiter, .saturn, .saturn-rings, .uranus, .neptune, .pluto').css({
+      'left':'50%',
+      'margin-left':'',
+      'margin-top':''
+      });
+  });
+});
+
+
+
+// Scale to be similar size
+$(function(){
+  $('.scale-down').click(function(){
+    $('.scale-off').removeClass('active');
+    $('.scale').removeClass('active');
+    
+    var earth = 5
+    var mercury = earth*0.4
+    var venus = earth*0.96
+    var moon = earth*0.28
+    var mars = earth*0.52
+    var jupiter = earth*11
+    var saturn = earth*9.12
+    var saturnRings = saturn*2.19
+    var uranus = earth*4
+    var neptune = earth*3.88
+    var pluto = earth*0.36
+    
+    var earthDistance = 75
+    var scaleAU = 50
+    $('.sun').css('width',sun/2 + "px");
+    $('.sun').css('height',sun/2 + "px");
+    $('.mercury').css('width',mercury+"px");
+    $('.mercury').css('height',mercury+"px");
+    $('.venus').css('width',venus+"px");
+    $('.venus').css('height',venus+"px");
+    $('.earth').css('width',earth+"px");
+    $('.earth').css('height',earth+"px");
+    $('.moon').css('width',moon+"px");
+    $('.moon').css('height',moon+"px");
+    $('.mars').css('width',mars+"px");
+    $('.mars').css('height',mars+"px");
+    $('.jupiter').css('width',jupiter+"px");
+    $('.jupiter').css('height',jupiter+"px");
+    $('.saturn').css('width',saturn+"px");
+    $('.saturn').css('height',saturn+"px");
+    $('.saturn-rings').css('width',saturnRings+"px");
+    $('.saturn-rings').css('height',saturnRings+"px");
+    $('.saturn-rings').css('border',earth*4+"px"+" solid rgba(255,255,255,.3)");
+    $('.uranus').css('width',uranus+"px");
+    $('.uranus').css('height',uranus+"px");
+    $('.neptune').css('width',neptune+"px");
+    $('.neptune').css('height',neptune+"px");
+    $('.pluto').css('width',pluto+"px");
+    $('.pluto').css('height',pluto+"px");
+    
+    $('.mercury').css({
+      'margin-left':'-' + mercury/2 + 'px',
+      'margin-top':'-' + mercury/2 + 'px'
+      });
+    $('.venus').css({
+      'margin-left':'-' + venus/2 + 'px',
+      'margin-top':'-' + venus/2 + 'px'
+      });
+    $('.earth').css({
+      'margin-left':'-' + earth/2 + 'px',
+      'margin-top':'-' + earth/2 + 'px'
+      });
+    $('.moon').css({
+      'margin-left':'-' + moon/2 + 'px',
+      'margin-top':'-' + moon/2 + 'px'
+      });
+    $('.mars').css({
+      'margin-left':'-' + mars/2 + 'px',
+      'margin-top':'-' + mars/2 + 'px'
+      });
+    $('.jupiter').css({
+      'margin-left':'-' + jupiter/2 + 'px',
+      'margin-top':'-' + jupiter/2 + 'px'
+      });
+    $('.saturn').css({
+      'margin-left':'-' + saturn/2 + 'px',
+      'margin-top':'-' + saturn/2 + 'px'
+      });
+    $('.saturn-rings').css({
+      'margin-left':'-' + saturnRings/2 + 'px',
+      'margin-top':'-' + saturnRings/2 + 'px'
+      });
+    $('.uranus').css({
+      'margin-left':'-' + uranus/2 + 'px',
+      'margin-top':'-' + uranus/2 + 'px'
+      });
+    $('.neptune').css({
+      'margin-left':'-' + neptune/2 + 'px',
+      'margin-top':'-' + neptune/2 + 'px'
+      });
+    $('.pluto').css({
+      'margin-left':'-' + pluto/2 + 'px',
+      'margin-top':'-' + pluto/2 + 'px'
+      });
   });
 });
