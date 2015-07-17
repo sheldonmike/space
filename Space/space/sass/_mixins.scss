@@ -1,0 +1,66 @@
+@mixin sun ($sun, $size, $color) {
+	.#{$sun} {
+		width: $size;
+		height: $size;
+		border-radius: 50%;
+		background-color: $color;
+		position: absolute;
+		left: 50%; 
+		top: 50%;
+		@include transform(translate(-50%, -50%));
+	}
+}
+
+@mixin planet ($planet, $size, $color, $margin, $orbit, $speed) {
+	.#{$planet} {
+		width: $size;
+		height: $size;
+		border-radius: 50%;
+		background-color: $color;
+		position: absolute;
+		left: 50%; 
+		top: 50%; 
+		margin-left: $margin;
+		margin-top: $margin;
+		cursor: pointer;
+    	@include animation ($orbit $speed linear infinite);
+	}
+}
+
+@mixin ring ($ring, $size, $margin) {
+	.#{$ring} {
+		width: $size;
+		height: $size;
+		border-radius: 50%;
+		border: 100px solid rgba(255,255,255,.3);
+		position: absolute;
+		left: 50%; 
+		top: 50%; 
+		margin-left: $margin;
+		margin-top: $margin;
+	}
+}
+
+$AU: 200;
+
+@mixin keyframe ($name, $translate) {
+	@include keyframes ($name) {
+      from { @include transform(rotate(0deg) translateX(($translate * $AU)+px) rotate(0deg)); }
+      to   { @include transform(rotate(360deg) translateX(($translate * $AU)+px) rotate(-360deg)); }
+	}
+}
+
+$AU2: 400;
+
+@mixin orbit ($orbit, $size) {
+	.#{$orbit}-orbit {
+		width: ($size * $AU2) + px;
+		height: ($size * $AU2) + px;
+		@include border-radius(50%);
+		position: absolute;
+		left: 50%; 
+		top: 50%;
+		@include transform(translate(-50%, -50%));
+	}
+}
+

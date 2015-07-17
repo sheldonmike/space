@@ -1,0 +1,207 @@
+// Welcome to Compass.
+// In this file you should write your main styles. (or centralize your imports)
+// Import this file using the following HTML or equivalent:
+// <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// Partial Imports
+
+@import "imports";
+@import "mixins";
+
+// Main Code
+
+@include sun(sun, 100px, yellow);
+@include planet(mercury, 10px, tan, -5px, mercuryOrbit, 2.89s);
+@include planet(venus, 24px, peru, -12px, venusOrbit, 7.4s);
+@include planet(earth, 25px, blue, -12.5px, earthOrbit, 12s);
+@include planet(moon, 7px, darkgray, -3.5px, moonOrbit, 0.89s);
+@include planet(mars, 13px, red, -6.5px, marsOrbit, 22.58s);
+@include planet(jupiter, 275px, peru, -137.5px, jupiterOrbit, 142s);
+@include planet(saturn, 228px, peru, -114px, saturnOrbit, 353s);
+@include ring(saturn-rings, 500px, -250px);
+@include planet(uranus, 100px, aqua, -50px, uranusOrbit, 1008s);
+@include planet(neptune, 97px, blue, -48.3px, neptuneOrbit, 1980s);
+@include planet(pluto, 9px, lightblue, -4.5px, plutoOrbit, 2972s);
+
+@include keyframe(mercuryOrbit, 0.385);
+@include keyframe(venusOrbit, 0.72);
+@include keyframe(earthOrbit, 1);
+@include keyframe(moonOrbit, 0.15);
+@include keyframe(marsOrbit, 1.52);
+@include keyframe(jupiterOrbit, 5.2);
+@include keyframe(saturnOrbit, 9.9);
+@include keyframe(uranusOrbit, 19.2);
+@include keyframe(neptuneOrbit, 30.1);
+@include keyframe(plutoOrbit, 39.5);
+
+@include orbit(pluto, 39.5);
+@include orbit(neptune, 30.1);
+@include orbit(uranus, 19.2);
+@include orbit(saturn, 9.9);
+@include orbit(jupiter, 5.2);
+@include orbit(mars, 1.52);
+@include orbit(earth, 1);
+@include orbit(venus, 0.72);
+@include orbit(mercury, 0.385);
+
+.orbit-rings {
+	border: 1px solid rgba(255,255,255,.3);
+	@include animation(fadein 1s);
+}
+
+@include keyframes (fadein) {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+$svg-gradient-shim-threshold: 100;
+.solar-system {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+  @include background(radial-gradient(rgba(0,0,0,1), rgba(0,0,0,.6)40%, rgba(0,0,0,0)71%));
+}
+
+.body-content {
+  display: inline-block;
+  height: 100%;
+}
+
+.controls {
+  height: 2em;
+  width: 100%;
+  color: white;
+  position: fixed;
+  z-index: 8;
+  top: 5em;
+}
+
+.planet-buttons {
+  float: left;
+  width: 25%;
+  margin: 1em 0;
+  text-align: center;
+  font-size: 1.4em;
+  padding: 0 3em;
+}
+
+.rings, .static-orbit, .active-orbit, .clear-info, .scale, .scale-off {
+  background-color: rgba(0,0,0,.5);
+  padding: .5em 0;
+  border: 1px solid rgba(255,255,255,.5);
+  &:hover {
+  	background-color: rgba(255,255,255,.5);
+  	color: black;
+  	cursor: pointer;
+  }
+}
+
+.active {
+  background-color: rgba(255,255,255,.8);
+  color: black;
+}
+
+.galaxy {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+  width: 100%;
+  height:100%;
+}
+
+.galaxy-staticOn {
+	@include animation(staticOn 3s ease);
+	left: 0;
+}
+
+@include keyframes (staticOn) {
+  	from {left: 50%;}
+  	to {left: 0;}
+}
+
+.galaxy-staticOff {
+	@include animation(staticOff 3s ease);
+}
+
+@include keyframes (staticOff) {
+  from {left: 0;}
+  to {left: 50%;}
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.no-vertical {
+  overflow-y: hidden;
+}
+
+.sun:hover *:not(.moon) {
+	@include animation-play-state(paused!important);
+}
+
+$planets: mercury venus earth mars;
+@each $planet in $planets {
+	.#{$planet}-info {
+		position: fixed;
+  		bottom: 1%;
+  		right: 1%;
+	}
+}
+
+.no-info {
+  display: none;
+}
+
+header {
+  position: fixed;
+  z-index: 9;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.298039);
+  height: 3em;
+  position: fixed;
+  z-index: 8;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-section {
+  margin-left: 5%;
+  padding-top: 1em;
+  color: rgba(255,255,255,.7);
+}
+
+.footer-section {
+	p {
+  		margin: 0;
+  		float: left;
+  		padding-right: 3em;
+  	}
+}
+
+.no-orbit {
+  	@include animation(none);
+}
+
+.back-arrow, nav {
+  position: relative;
+  z-index: 9;
+}
+
+.button-type {
+  float: left;
+  width: 33%;
+  padding: 0.5em 0;
+}
+
+.toggle-button {
+  float: left;
+  width: 33%;
+  padding: 0 0.5em;
+}
