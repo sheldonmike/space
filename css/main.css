@@ -199,12 +199,12 @@
     	/*background: rgb(50,50,50) url("../img/semi-circle-large.png") center;*/
     	color: white;
     	
-    	background: -webkit-radial-gradient(center bottom, yellow -60%, rgba(0,0,0,0) 60%);
+    	background: -webkit-radial-gradient(center bottom, blue -60%, rgba(0,0,0,0) 60%);
       background-color: rgba(0,0,0,.8);
     }
     
     #flare {
-      background: -webkit-radial-gradient(center bottom, crimson -60%, rgba(0,0,0,0) 60%);
+      background: -webkit-radial-gradient(center bottom, red -60%, rgba(0,0,0,0) 60%);
       background-color: rgba(0,0,0,.8);
       
       /*background-color: rgb(50,50,50);*/

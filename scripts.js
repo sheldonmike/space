@@ -1,6 +1,6 @@
 // JavaScript file for the space pages
 
-// Contrls the radial-gradient colour change on the home page
+// Controls the radial-gradient colour change on the home page
 $(function () {
     $(window).scroll(function () {
         var currentScrollTop = $(window).scrollTop();
@@ -237,7 +237,7 @@ $(function(){
         }
         }]);
         
-        $('.ranus').playKeyframe(
+        $('.uranus').playKeyframe(
         'Uranus 2s ease'
         );
         
